@@ -1,0 +1,124 @@
+:root{
+    --depth: -100px;
+}
+body{
+    height: 100vh;
+}
+.wrapper{
+    width: 80%;
+    height: 80%;
+    transform-origin: center;
+    transform: rotateX(-10deg) rotateY(-10deg);
+    /* background-color: aliceblue; */
+    transform-style:preserve-3d;
+    animation: viewpoint 8s 8s infinite forwards alternate ease-in-out;
+}
+@keyframes viewpoint { 
+    from, 20%{transform: rotateX(-10deg) rotateY(-10deg);}
+    70%, to{transform: rotateX(0) rotateY(0);}
+}
+.container{
+    width: 30vw;
+    height: 40vh;
+    /* background-color: aliceblue; */
+    /* perspective: 1000px; */
+    transform-style: preserve-3d;
+    position: relative;
+    transform-origin: top;
+
+    /* transform: rotateY(30deg); */
+}
+@keyframes animate {
+    from{
+        transform: translateZ(calc(var(--depth) * (var(--delay) + 1))) rotateX(-90deg);
+    }
+    to{
+        transform: translateZ(calc(var(--depth) * (var(--delay) + 1))) rotateX(0);
+    }
+}
+.layer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-origin: top;
+    transform: translateZ(calc(var(--depth) * (var(--delay) + 1))) rotateX(-90deg);  
+    animation: animate 2s forwards;
+    animation-delay: calc((var(--delay) * 0.3s) + 6s);
+    display: grid;
+    place-items: center;
+}
+.layer div{
+    width: 30%;
+    height: 40%;
+    /* background-color: rgba(255, 255, 255, 0.1); */
+}
+.layer-1{
+    background-color: rgba(255, 0, 0, 0.1);
+}
+.layer-1 div{
+    width: 60px;
+    height: 30px;
+    border: 5px solid black;
+    border-top: none;
+    border-radius: 0 0 100px 100px;
+    position: relative;
+    top: 30px;
+}
+
+.layer-2{
+    background-color: rgba(126, 126, 255, 0.1);
+}
+.layer-2 div{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 150px;
+    left: 200px;
+    background-color: black;
+    border-radius: 50%;
+}
+.layer-3{
+    background-color: rgba(91, 134, 11, 0.1);
+}
+.layer-3 div::after{
+    content: "";
+    width: 50%;
+    height: 94%;
+    border: 5px solid black;
+    border-left: none;
+    border-radius: 0 100px 100px 0;
+    justify-content: flex-end;
+}
+.layer-3 div::before{
+    content: "";
+    width: 50%;
+    height: 100%;
+}
+.layer-4{
+    background-color: rgba(40, 125, 144, 0.1);
+}
+.layer-4 div{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 150px;
+    right: 200px;
+    background-color: black;
+    border-radius: 50%;
+}
+.layer-5{
+    background-color: rgba(164, 58, 131, 0.1);
+}
+.layer-3 div,
+.layer-5 div{
+    display: flex;
+}
+.layer-5 div::before{
+    content: "";
+    width: 50%;
+    height: 94%;
+    border: 5px solid black;
+    border-right: none;
+    border-radius: 100px 0 0 100px;
+}
+

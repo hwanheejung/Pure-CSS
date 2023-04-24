@@ -1,0 +1,100 @@
+body{
+    height: 100vh;
+}
+.container{
+    height: 60vh;
+    width: 30vw;
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    perspective: 1000px;
+}
+.box{
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    transform-style: preserve-3d;
+    animation: animate 10s infinite alternate ease-in-out;
+}
+@keyframes animate {
+    0%{
+        transform: rotateX(45deg) rotateY(0deg);
+    }
+    50%{
+        transform: rotateX(45deg) rotateY(360deg);
+    }
+    100%{
+        transform: rotateX(-45deg) rotateY(0deg);
+    }
+}
+.face{
+    height: 250px;
+    width: 250px;
+    text-align: center;
+    background: aliceblue;
+    font-size: 32px;
+    position: absolute;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.face03{
+    right: 125px;
+    transform: rotateY(-90deg);
+}
+.face04{
+    left: 125px;
+    transform: rotateY(90deg);
+}
+.face05{
+    bottom: 125px;
+    transform: rotateX(90deg);
+}
+.face06{
+    top: 125px;
+    transform: rotateX(-90deg);
+}
+.face01{
+    transform: translateZ(125px);
+}
+.face02{
+    transform: translateZ(-125px);
+}
+span{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: black;
+}
+.face-container{
+    width: calc(50% + 20px);
+    height: calc(50% + 20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.row01,
+.row02,
+.row03{
+    display: flex;
+    justify-content: space-between;
+}
+.face01 .row01 span,
+.face01 .row02 span:not(:nth-child(2)),
+.face01 .row03 span,
+.face02 .row01 span:nth-child(2),
+.face02 .row02 span,
+.face02 .row03 span:nth-child(1),
+.face03 .row01 span:nth-child(2),
+.face03 .row02 span:not(:nth-child(2)),
+.face03 .row03 span:nth-child(1),
+.face04 .row02 span,
+.face05 .row02 span:not(:nth-child(2)),
+.face06 .row02 span:nth-child(2){
+    background-color: transparent;
+}  
