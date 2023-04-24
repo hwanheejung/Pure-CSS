@@ -1,1 +1,1 @@
-# Pure-CSS
+# Pure CSS animation archive
