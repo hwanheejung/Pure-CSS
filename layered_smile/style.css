@@ -72,8 +72,8 @@ body{
     position: absolute;
     width: 20px;
     height: 20px;
-    top: 150px;
-    left: 200px;
+    top: 42%;
+    left: 42%;
     background-color: black;
     border-radius: 50%;
 }
@@ -101,8 +101,8 @@ body{
     position: absolute;
     width: 20px;
     height: 20px;
-    top: 150px;
-    right: 200px;
+    top: 42%;
+    right: 42%;
     background-color: black;
     border-radius: 50%;
 }
