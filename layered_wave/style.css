@@ -1,0 +1,115 @@
+:root{
+    --depth: -100px;
+}
+body{
+    height: 100vh;
+}
+.wrapper{
+    width: 80%;
+    height: 80%;
+    transform-origin: center;
+    transform: rotateX(-10deg) rotateY(-10deg);
+    transform-style:preserve-3d;
+    animation: viewpoint 8s 1s infinite forwards alternate ease-in-out;
+}
+@keyframes viewpoint { 
+    from, 20%{transform: rotateX(-10deg) rotateY(-10deg);}
+    70%, to{transform: rotateX(0) rotateY(0);}
+}
+.container{
+    width: 30vw;
+    height: 40vh;
+    transform-style: preserve-3d;
+    position: relative;
+    transform-origin: top;
+}
+
+.layer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-origin: top;
+    transform: translateZ(calc(var(--depth) * (var(--delay) + 1)));  
+    display: grid;
+    place-items: center;
+}
+.layer div{
+    width: 70%;
+    height: 100%;
+    background-color: rgba(247, 239, 206, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+}
+.layer div::after{
+    content: '';
+    width: 100%;
+}
+.layer-1 div::after{
+    height: 10%;
+    background-color: #5ba4cf;
+}
+.layer-2 div::after{
+    height: 20%;
+    background-color: #4289C9;
+}
+.layer-3 div::after{
+    height: 25%;
+    background-color: #0369A7;
+}
+.layer-4 div::after{
+    height: 30%;
+    background-color: #0F406F;
+}
+.layer-5 div{
+    height: 100%;
+    background-color: #FBE9C8;
+    position: relative;
+}
+.layer-5 div::after{
+    width: 50px;
+    height: 50px;
+    background-color: #EE2E31;
+    /* box-shadow: 0 0 10px #EE2E31,
+                0 0 20px #EE2E31,
+                0 0 30px #EE2E31;  */
+    border-radius: 50%;
+    position: absolute;
+    top: 120px;
+    right: 100px;
+    /* animation: sunset 15s infinite alternate ease-in-out; */
+}
+/* @keyframes sunset {
+    from, 10%{top: 100px;}    
+    90%, to{top: 200px;}    
+} */
+.layer div svg{
+    width: 500px;
+    height: 100px;
+    transform: translateX(0);
+    animation: wave 3s infinite alternate ease-in-out;
+}
+@keyframes wave{
+    from{transform: translateX(0);}
+    to{transform: translateX(50px);}
+}
+.layer-1 div svg{
+    animation-duration: 2s;
+}
+.layer-2 div svg{
+    animation-delay: 0.5s;
+    animation-duration: 2.3s;
+}
+.layer-3 div svg{
+    animation-delay: 0.7s;
+    animation-duration: 2.6s;
+}
+.layer-4 div svg{
+    animation-delay: 1s;
+    animation-duration: 3s;
+}
+
+
+
