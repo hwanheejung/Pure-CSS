@@ -11,7 +11,7 @@ body{
     transform: rotateX(-10deg) rotateY(-10deg);
     /* background-color: aliceblue; */
     transform-style:preserve-3d;
-    animation: viewpoint 8s 3s infinite forwards alternate ease-in-out;
+    animation: viewpoint 8s 1s infinite forwards alternate ease-in-out;
 }
 @keyframes viewpoint { 
     from, 20%{transform: rotateX(-10deg) rotateY(-10deg);}
